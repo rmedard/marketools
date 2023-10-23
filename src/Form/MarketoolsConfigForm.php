@@ -47,6 +47,7 @@ class MarketoolsConfigForm extends ConfigFormBase
 
   public function validateForm(array &$form, FormStateInterface $form_state): void
   {
+    $form_state->setValue('mautic_base_url', trim($form_state->getValue('mautic_base_url')));
     $mauticBaseUrl = $form_state->getValue('mautic_base_url');
     if (isset($mauticBaseUrl)) {
       if (!UrlHelper::isValid($mauticBaseUrl, true)) {
@@ -57,4 +58,14 @@ class MarketoolsConfigForm extends ConfigFormBase
     }
     parent::validateForm($form, $form_state);
   }
+
+  public function submitForm(array &$form, FormStateInterface $form_state): void {
+    $config = $this->config(static::CONFIG_NAME);
+    $values = $form_state->getValues();
+    $config->set('mautic_base_url', $values['mautic_base_url'])->save();
+    $config->set('mautic_client_id', $values['mautic_client_id'])->save();
+    $config->set('mautic_client_secret', $values['mautic_client_secret'])->save();
+    parent::submitForm($form, $form_state);
+  }
+
 }

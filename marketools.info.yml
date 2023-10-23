@@ -1,11 +1,10 @@
 name: Marketools
 description: 'This module handles simple marketing strategies. The module is based on Mautic.'
 package: Marketing
-config: 'marketools.admin_settings'
+config: marketools.admin_settings
 
 type: module
 core_version_requirement: ^9 || ^10
-version: '9.x-1.0'
+
 project: 'marketools'
-dependencies:
-  - mautic:api-library
+version: '9.x-1.0'
