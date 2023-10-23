@@ -1,5 +1,13 @@
+system.admin_config_marketing:
+  path: '/admin/config/marketing'
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Marketing Settings'
+  requirements:
+    _permission: 'access administration pages'
+
 marketools.admin_settings:
-  path: '/admin/config/marketools_settings'
+  path: '/admin/config/marketing/marketools_settings'
   defaults:
     _form: '\Drupal\marketools\Form\MarketoolsConfigForm'
     _title: 'Marketools settings configuration'

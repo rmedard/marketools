@@ -1,0 +1,11 @@
+system.admin_config_marketing:
+  title: 'Marketing'
+  parent: system.admin_config
+  expanded: true
+  url: internal:/admin/config/marketing
+
+marketing_settings.admin:
+  title: 'Mautic settings'
+  description: 'Configuration settings for marketing via Mautic'
+  parent: system.admin_config_marketing
+  url: internal:/admin/config/marketing/marketools_settings
