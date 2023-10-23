@@ -1,5 +1,5 @@
 marketools.admin_settings:
-  path: '/admin/config/martketools_settings'
+  path: '/admin/config/marketools_settings'
   defaults:
     _form: '\Drupal\marketools\Form\MarketoolsConfigForm'
     _title: 'Marketools settings configuration'
